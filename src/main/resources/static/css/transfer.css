@@ -1,0 +1,23 @@
+body { margin:0px; padding:0px;
+    font-family:'新宋体', '宋体', Verdana, Arial, Sans-Serif;
+    font-size:12px; color:#000; text-align:center; background:#fff; }
+a img { border:none; }
+a, a:visited { color:#7f8e91; text-decoration:none; outline:none; }
+a:hover { color:#81c8d5; text-decoration:underline; }
+p { margin:0; padding:0; }
+ul { list-style-type:none; margin:0; padding:0; line-height:0%; }
+ul li { margin:0; padding:0; line-height:normal; }
+
+#container { margin: 0 auto; width:649px; height:978px; text-align:center; }
+#content { width:649px; overflow:hidden; text-align:left; position:relative; }
+p.h1 { font-size:26px; font-weight:bold; line-height:52px; }
+#content p { font-size:19px; line-height:38px; }
+#content.spec p { font-size:15px; line-height:28px; }
+#content p.indent { text-indent:38px; }
+#content p.right { text-align:right; }
+#content p span { text-indent:0; text-align:center; display:inline-block; border-bottom:1px solid #000; outline:none; }
+#c1 { width:300px; }
+#c2, #c5 { width:503px; }
+#c4 { width:150px; }
+#c3 { width:500px; }
+span.fixed { border:0px !important; width:200px; }

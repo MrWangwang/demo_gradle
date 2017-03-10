@@ -1,0 +1,54 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'demo'
+	version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.7
+
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+    mavenLocal()
+
+    maven {url 'http://192.168.1.15:8080/nexus/content/repositories/snapshots/'}
+    maven {url 'http://192.168.1.15:8080/nexus/content/repositories/releases/'}
+    maven {url 'http://192.168.1.15:8080/nexus/content/repositories/central/'}
+    maven {url 'http://192.168.1.15:8080/nexus/content/repositories/thirdparty/'}
+    maven {url 'http://maven.oschina.net/content/groups/public/'}
+    maven {url 'http://mirrors.ibiblio.org/pub/mirrors/maven2/'}
+    mavenCentral()
+}
+
+
+dependencies {
+//    compile fileTree(dir: "$buildDir/../lib", includes: ['*.jar'])
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile 'native:oracle11:6.0'
+    compile ('com.alibaba:druid:1.0.13') {
+        exclude module: 'c3p0'
+    }
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile 'commons-codec:commons-codec:1.10'
+    compile 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    /*compile 'org.springframework.boot:spring-boot-starter-thymeleaf'*/
+}
